@@ -6,7 +6,7 @@ import Contact from "../detail_form_page/Contact";
 import Symptoms from "../detail_form_page/Symptoms";
 import Vaccines from "../detail_form_page/Vaccine";
 import UserType from "./Interface";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import countries from "../../data/countries.json";
 import vietnam_provinces from "../../data/vietnam-province-district.json";

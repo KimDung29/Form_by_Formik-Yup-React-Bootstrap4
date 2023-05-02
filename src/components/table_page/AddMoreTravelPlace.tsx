@@ -16,7 +16,7 @@ const AddMoreTravelPlace = (props: any) => {
                 ) => {
                   e.preventDefault();
                   arrayHelper.push("");
-                  props.setIsDisplay((prevState) => !prevState);
+                  props.setIsDisplay((prevState: boolean) => !prevState);
                 }}
               >
                 Add more
@@ -132,7 +132,7 @@ const AddMoreTravelPlace = (props: any) => {
                         arrayHelper.remove(index);
                         if (arrayHelper.form.values.travels.length === 0) {
                           // Nếu đã xóa hết, đặt giá trị của biến state về false
-                          props.setIsDisplay((prevState) => !prevState);
+                          props.setIsDisplay(true);
                         }
                       }}
                     >

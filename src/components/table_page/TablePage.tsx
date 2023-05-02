@@ -12,7 +12,6 @@ const TablePage = () => {
 
   // USER
   const [users, setUsers] = useState(arrayUsers as UserType[]);
-  const [currentUsers, setCurrentUsers] = useState([] as UserType[]);
   const [currentUserIndex, setCurrentUserIndex] = useState(0);
 
   localStorage.setItem("users", JSON.stringify(users));
@@ -74,7 +73,7 @@ const TablePage = () => {
     const start = pageSize * currentUserIndex;
     const end = pageSize + start;
 
-    const newArray = !arrayUsers.length
+    const newArray = !users.length
       ? []
       : arrayUsers
           .filter((item: any) =>
@@ -85,7 +84,7 @@ const TablePage = () => {
             )
           )
           .slice(start, end);
-    setCurrentUsers(newArray);
+    setUsers(newArray);
   };
 
   useEffect(() => {
@@ -122,7 +121,7 @@ const TablePage = () => {
         </div>
 
         <TableUser
-          data={currentUsers}
+          data={users}
           handleDeleteUser={handleDeleteUser}
           currentUserIndex={currentUserIndex}
           currentPage={currentPage}
