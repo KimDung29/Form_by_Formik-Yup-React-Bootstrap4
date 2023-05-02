@@ -1,11 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import UserType from "../form_page/Interface";
+import UserType, { fakeData } from "../form_page/Interface";
 import Pagination from "./Pagination";
 import TableUser from "./TableUser";
 
+// SET FAKE DATA TO CHECK
+const local = localStorage.getItem("users");
+localStorage.setItem("users", JSON.stringify(fakeData));
+
 const TablePage = () => {
   const navigate = useNavigate();
+
   // GET USERS FROM localStorage
   const localDatas = localStorage.getItem("users");
   const arrayUsers = localDatas !== null ? JSON.parse(localDatas) : [];
